@@ -5,8 +5,8 @@ console.log('app.js is running ok!');
 // JSX Javascript XML
 var app = {
     title: 'Indecision app',
-    subtitle: 'Put your life in the hands of a robot'
-
+    subtitle: 'Put your life in the hands of a robot',
+    options: ['One', 'Two']
 };
 
 var template = React.createElement(
@@ -17,10 +17,15 @@ var template = React.createElement(
         null,
         app.title
     ),
-    React.createElement(
+    app.subtitle && React.createElement(
         'p',
         null,
         app.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        app.options.lenght > 0 ? 'Here are your options' : 'No options'
     ),
     React.createElement(
         'ol',
@@ -41,34 +46,36 @@ var template = React.createElement(
 var user = {
     name: 'Shane',
     age: 24,
-    location: 'Dublin'
+    location: 'Boston'
 };
 
-var userName = 'shane';
-var userAge = 24;
-var userLocation = 'Ireland';
-
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    }
+}
+//ternary operator
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        user.name,
+        user.name ? user.name : 'Anonymous',
         ' '
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
         user.age
     ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        user.location
-    )
+    getLocation(user.location)
 );
 
 var appRoot = document.getElementById('app');
