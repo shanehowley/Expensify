@@ -22,6 +22,7 @@ var template = (
 
 var user = {
     name: 'Shane',
+    gender: 'male',
     age: 24,
     location: 'Boston'
 };
