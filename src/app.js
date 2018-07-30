@@ -1,13 +1,13 @@
 console.log('app.js is running ok!')
 
 // JSX Javascript XML
-var app = {
+const app = {
     title: 'Indecision app',
     subtitle: 'Put your life in the hands of a robot',
     options: ['One','Two']   
 };
 
-var template = (
+const template = (
     <div>
         <h1>{app.title}</h1> 
             {app.subtitle && <p>{app.subtitle}</p>}
@@ -20,7 +20,7 @@ var template = (
     </div>
 );
 
-var user = {
+const user = {
     name: 'Shane',
     gender: 'male',
     age: 24,
@@ -33,7 +33,7 @@ function getLocation(location){
     } 
 }
 //ternary operator
-var templateTwo = (
+const templateTwo = (
     <div>
     
     <h1>{user.name ? user.name : 'Anonymous'} </h1>
@@ -44,6 +44,6 @@ var templateTwo = (
     </div>
 );
 
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);  
