@@ -44,7 +44,8 @@ var template = React.createElement(
 );
 var count = 0;
 var addOne = function addOne() {
-    console.log('addOne');
+    count++;
+    console.log('addOne', count);
 };
 var minusOne = function minusOne() {
     console.log('minusOne');
