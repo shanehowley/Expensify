@@ -4,57 +4,51 @@ console.log('app.js is running ok!')
 const app = {
     title: 'Indecision app',
     subtitle: 'Put your life in the hands of a robot',
-    options: ['One','Two']   
+    options: []   
 };
 
-const template = (
-    <div>
-        <h1>{app.title}</h1> 
-            {app.subtitle && <p>{app.subtitle}</p>}
-            <p>{app.options.lenght > 0 ? 'Here are your options' :'No options'}</p> 
-            <ol>
-                <li>Item one</li>
-                <li>Item two</li>
-            </ol>
-    </div>
-);
-let count = 0;
-const addOne = () => {
-    count++;
-    renderCounterApp();
-};
-const minusOne =() => {
-    count--;
-    renderCounterApp();
+const onFormSubmit = (e) => {
+    e.preventDefault();
+
+    const option = e.target.elements.option.value;
+
+    if (option) {
+        app.options.push(option);
+        e.target.elements.option.value = '';
+       render(); 
+    }
 };
 
-const reset = () => {
-    count = 0;
-    renderCounterApp();
+const onRemoveAll = () => {
+    app.options = [];
+    render();
+
 };
-
-const someId = 'myidhere'
-const templateTwo = (
-    <div>
-    <h1>Count: {count}</h1>
-    <button onClick={addOne}>+1</button>
-    <button onClick={minusOne}>-1</button>
-    <button onClick={reset}>reset</button>
-    </div>   
-);
-console.log(templateTwo); 
-
 const appRoot = document.getElementById('app');
 
-const renderCounterApp = () => {
-    const templateTwo = (
+const render = () => {
+    const template = (
         <div>
-        <h1>Count: {count}</h1>
-        <button onClick={addOne}>+1</button>
-        <button onClick={minusOne}>-1</button>
-        <button onClick={reset}>reset</button>
-        </div>  
+            <h1>{app.title}</h1> 
+              {app.subtitle && <p>{app.subtitle}</p>}
+                <p>{app.options.length > 0 ? 'Here are your options' :'No options'}</p> 
+                <p>{app.options.length}</p>
+    
+                <ol>
+                    <li>Item one</li>
+                    <li>Item two</li>
+                </ol>
+                <button onClick={onRemoveAll}>Remove All</button>
+                <form onSubmit={onFormSubmit}>
+                    <input type="text" name="option"/>
+                    <button>Add Option</button>
+                    
+
+                </form>      
+        </div>
     );
-    ReactDOM.render(templateTwo, appRoot);  
+
+    ReactDOM.render(template, appRoot);
 };
-renderCounterApp();
+
+render();
