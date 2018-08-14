@@ -1,15 +1,3 @@
-// const obj = {
-//     name: 'vikram',
-//     getName() {
-//         return this.name;
-//     }
-// };
-
-
-
-// console.log(obj.getName());
-
-
 class IndecisionApp extends React.Component {
     render() {
         const title = 'Indecision';

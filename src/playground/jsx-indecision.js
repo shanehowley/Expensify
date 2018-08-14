@@ -58,8 +58,6 @@ const render = () => {
                 <form onSubmit={onFormSubmit}>
                     <input type="text" name="option"/>
                     <button>Add Option</button>
-                    
-
                 </form>      
         </div>
     );
