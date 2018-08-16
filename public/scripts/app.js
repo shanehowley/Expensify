@@ -153,7 +153,7 @@ var Action = function Action(props) {
                 onClick: props.handlePick,
                 disabled: !props.hasOptions
             },
-            'What should i do ?'
+            'What should i do magic computer?'
         )
     );
 };
