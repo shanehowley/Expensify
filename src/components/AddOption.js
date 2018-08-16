@@ -1,14 +1,10 @@
 import React from 'react';
 
-class AddOption extends React.Component{
-    constructor(props) {
-        super(props);
-        this.handeleAddOption = this.handeleAddOption.bind(this);
-        this.state = {
-            error: undefined
-        };
-    }
-   handeleAddOption(e) {
+export default class AddOption extends React.Component{
+    state = {
+        error: undefined
+    };
+    handeleAddOption = (e) => {
        e.preventDefault();
     
        const option = e.target.elements.option.value.trim();
@@ -19,7 +15,7 @@ class AddOption extends React.Component{
         if(!error) {
             e.target.elements.option.value = '';
         }
-}
+};
     
     render() {
 
@@ -35,4 +31,3 @@ class AddOption extends React.Component{
     }
 }
 
-export default AddOption;
