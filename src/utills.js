@@ -1,9 +1,11 @@
-// console.log('utills.js is working !')
+console.log('utills.js is working !')
 
-// export const square = (x) => x * x;
+ const square = (x) => x * x;
 
-// export const add = (a, b) => a + b;
+ const add = (a, b) => a + b;
 
-// export { square, add };
+ const subtract = (a, b) => a - b;
 
-// //exports -  default export - named exports
+ export { square, add, subtract as default };
+
+// exports -  default export - named exports
