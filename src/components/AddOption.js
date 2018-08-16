@@ -10,7 +10,7 @@ class AddOption extends React.Component{
     }
    handeleAddOption(e) {
        e.preventDefault();
-
+    
        const option = e.target.elements.option.value.trim();
        const error = this.props.handeleAddOption(option);
        
