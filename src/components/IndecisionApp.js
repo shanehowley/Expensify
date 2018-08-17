@@ -71,12 +71,13 @@ class IndecisionApp extends React.Component {
     // handleDeleteOptions
     
     render() {
+        const title = 'Indecision App'
         const subtitle = 'Put your life in the hands of a computer';
         // const options = ['Thing one' , 'Thing two' , 'Thing three'];
 
         return (
             <div>
-            <Header subtitle={subtitle} />
+            <Header title={title} subtitle={subtitle} />
             <Action 
             hasOptions={this.state.options.length > 0} 
             handlePick={this.handlePick}
